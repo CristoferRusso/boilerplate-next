@@ -1,27 +1,13 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from 'react';
 
 export const PostContext = createContext();
 
-export function PostProvider({ children }) {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch("/api/getSanityData");
-        const data = await response.json();
-        setPosts(data.result);
-      } catch (error) {
-        console.error("Errore nel recupero dei post:", error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
+export const PostProvider = ({ children, posts }) => {
+  const [postData, setPostData] = useState(posts || []);
 
   return (
-    <PostContext.Provider value={{ posts }}>
+    <PostContext.Provider value={{ posts: postData }}>
       {children}
     </PostContext.Provider>
   );
-}
+};

@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Topbar />
-      <PostProvider>
+      <PostProvider posts={pageProps.posts} data={pageProps.data}>
         <Component {...pageProps} />
       </PostProvider>
       <Footer />
