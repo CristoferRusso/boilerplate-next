@@ -2,18 +2,16 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from 'next/link';
-import { fetchPosts } from "@/lib/fetchPosts";  
+import { fetchPosts } from "@/lib/FetchPosts";  
 
 const inter = Inter({ subsets: ["latin"] });
 
 export async function getServerSideProps() {
   const posts = await fetchPosts(); 
-  const data = await fetchData(); // Chiama la funzione per ottenere i dati
 
   return {
     props: {
       posts,
-      data // Passa i dati come props alla pagina
     },
   };
 }
