@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
     "@sanity/cli": "^3.74.1",
     "bootstrap": "4.5.2",
     "next": "13.5.8",
+    "next-redux-wrapper": "^8.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.3",
+    "sass": "^1.84.0"
   },
   "devDependencies": {
     "eslint": "^8",

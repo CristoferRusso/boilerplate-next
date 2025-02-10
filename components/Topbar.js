@@ -1,6 +1,10 @@
 import Link from "next/link";
 
+
+
 export default function Topbar() {
+
+
   return (
     <nav className="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
